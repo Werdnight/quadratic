@@ -1,0 +1,13 @@
+token_1_9 = 1-9
+token_0_9 = 0-9
+tokens_0_9 = 0-9+
+token_sign = +|-
+token_dot = . | ,
+token_n = (tokens_0_9) | (token_1_9  & (tokens_0_9))
+token_z = [token_sign] & token_n
+token_q = ([token_sign] token_z [token_dot] [tokens_0_9])| ([token_sign] [token_z]token_dot tokens_0_9)
+token_r = token_q [token_exp [token_sign] token_1_9 [tokens_0_9]]
+token_nan = ([token_sign] nan)
+token_inf = ([token_sign] inf)
+token_number = (token_r|token_nan|token_inf)
+input = ((token_number) (token_number) (token_number))
