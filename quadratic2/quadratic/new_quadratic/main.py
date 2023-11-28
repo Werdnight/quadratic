@@ -4,8 +4,6 @@ import time
 import random
 import tqdm
 
-print('lol')
-
 
 def main(str_input: str):
     d = Input(str_input)
